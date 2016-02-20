@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="nuProject">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Typescript</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="/js/script.js"></script>
+    <!-- endinject -->
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">nuProject</div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+      <ng-view></ng-view>
+    </div>
+
+    <!-- bower:js -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+
+    <!-- angular:js -->
+    <script src="/modules/app.js"></script>
+    <script src="/modules/controllers/homeCtrl.js"></script>
+    <!-- endinject -->
+
+  </body>
+</html>
