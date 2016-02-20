@@ -18,13 +18,17 @@ touch public/js/script.js
 ### TSD
 ```
 tsd init
-tsd install angular angular-resource --resolve --save
+tsd install angular angular-ui-router angular-resource --resolve --save
 
 #tsd plugin
 https://atom.io/packages/atom-typescript
 ```
 
 we setup `tsconfig.json` to compile files `./public/modules`
+
+we also inside `tsconfig.json` set rootDir to `'./app'`,
+without this value, gulp was saving 'app/app.js' to public/modules/app/app.js
+conflicting with text editor
 
 ### bower ui and angular files
 ```
@@ -49,3 +53,11 @@ we introduce `injectAngularSrc` to support injecting modules saved from typescri
     name: 'angular',
   };
 ```
+
+We also introduce
+```
+var ts = require('gulp-typescript');
+var tsd = require('gulp-tsd');
+```
+- tsd allows us to compile tsd resources, since they are in .gitignore, this will come handing in production.
+- ts allows us to compile typscript to destination using same `tsconfig.json`, we already are able to do this via texteditor, but again, this will help at deployment. 

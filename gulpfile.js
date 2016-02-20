@@ -1,5 +1,22 @@
 var gulp = require('gulp');
 
+gulp.task('tsd', function(callback) {
+  var tsd = require('gulp-tsd');
+  tsd({
+    command: 'reinstall',
+    config: './tsd.json',
+  }, callback);
+});
+
+gulp.task('ts', function() {
+  var ts = require('gulp-typescript');
+  var tsProject = ts.createProject('./tsconfig.json');
+  var tsResult = tsProject.src()
+    .pipe(ts(tsProject));
+
+  return tsResult.js.pipe(gulp.dest('./public/modules'));
+});
+
 gulp.task('inject', function() {
   var wiredep = require('wiredep').stream;
   var inject = require('gulp-inject');

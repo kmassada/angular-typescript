@@ -1,6 +1,8 @@
 {
 	"compilerOptions": {
 		"target": "ES5",
-		"outDir": "./public/modules"
-	}
+		"outDir": "./public/modules/",
+		"rootDir": "./app"
+	},
+	"exclude": ["node_modules"]
 }
