@@ -4,9 +4,10 @@ module app.home {
   }
   class HomeCtrl implements IHomeModel {
     title: string;
-
-    constructor() {
+    static $inject = ["url"];
+    constructor(private url: URL_CONSTANTS) {
       this.title = "Home Controller"
+      console.log(this.url.BASE);
     }
   }
   angular
