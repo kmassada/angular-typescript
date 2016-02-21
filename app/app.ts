@@ -19,5 +19,14 @@ module app {
         controllerAs: "vm",
         data: { isPublic: true },
     });
+
+    $stateProvider
+    .state('venues', {
+        url: '/venues',
+        templateUrl: "../partials/_venues.html",
+        controller: "VenueListCtrl",
+        controllerAs: "vm",
+        data: { isPublic: false },
+    });
   }
 }
