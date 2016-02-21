@@ -6,12 +6,13 @@ module app {
   }
 
   // TODO: http://stackoverflow.com/questions/35523551/how-to-inject-constants-into-other-modules-in-angular-typescript
-  var myConstants = {
+  var URL_CONSTANTS = {
      BASE: 'http://localhost:3222',
-     BASE_API: 'http://localhost:3222/v1'
+     BASE_API: 'http://localhost:3222/api'
   };
 
-  angular
-  .module("nuProject")
-  .constant("url", myConstants);
+  var main =  angular.module("nuProject")
+
+  main
+  .constant("url", URL_CONSTANTS)
 }
