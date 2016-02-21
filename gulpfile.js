@@ -47,3 +47,21 @@ gulp.task('inject', function() {
       .pipe(wiredep(options))
       .pipe(gulp.dest('./public'));
 });
+
+gulp.task('serve', [], function() {
+  var nodemon = require('gulp-nodemon');
+  var Files = ['public/**/*.*', '!gulpfile.js'];
+  var options = {
+    exec: 'node_modules/.bin/http-server',
+    delayTime: 1,
+    env: {
+      PORT: 8000,
+    },
+    watch: Files,
+  };
+
+  return nodemon(options)
+    .on('restart', function(ev) {
+      console.log('Restarting');
+    });
+});

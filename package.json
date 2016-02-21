@@ -1,22 +1,22 @@
 {
-  "name": "nuProject",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^2.11.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-inject": "^3.0.0",
-    "gulp-tsd": "^0.1.0",
-    "wiredep": "^3.0.0"
-  }
+	"name": "nuProject",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"gulp-nodemon": "^2.0.6",
+		"gulp": "^3.9.1",
+		"gulp-typescript": "^2.11.0",
+		"gulp-inject": "^3.0.0",
+		"gulp-tsd": "^0.1.0",
+		"wiredep": "^3.0.0",
+		"http-server": "^0.9.0"
+	}
 }

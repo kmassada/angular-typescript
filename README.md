@@ -60,4 +60,22 @@ var ts = require('gulp-typescript');
 var tsd = require('gulp-tsd');
 ```
 - tsd allows us to compile tsd resources, since they are in .gitignore, this will come handing in production.
-- ts allows us to compile typscript to destination using same `tsconfig.json`, we already are able to do this via texteditor, but again, this will help at deployment. 
+- ts allows us to compile typscript to destination using same `tsconfig.json`, we already are able to do this via texteditor, but again, this will help at deployment.
+
+We've been running http-server using a simple python http-server module, for consistency, we introduce, gulp-nodemon and power http-server using https://github.com/indexzero/http-server that runs `http-server [path] [options]`
+```
+var node = require('gulp-nodemon');
+```
+
+watching all files, and running on our preferred port of 8000
+```
+var Files = ['public/**/*.*', '!gulpfile.js'];
+var options = {
+  exec: 'node_modules/.bin/http-server',
+  delayTime: 1,
+  env: {
+    PORT: 8000,
+  },
+  watch: Files,
+};
+```
