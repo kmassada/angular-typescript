@@ -14,7 +14,7 @@ module app {
     $stateProvider
     .state('home', {
         url: '/home',
-        templateUrl: "../partials/homePageView.html",
+        templateUrl: "../partials/_home.html",
         controller: "HomeCtrl",
         controllerAs: "vm",
         data: { isPublic: true },

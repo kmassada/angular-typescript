@@ -9,6 +9,7 @@
     <!-- endbower -->
 
     <!-- inject:css -->
+    <link rel="stylesheet" href="/css/sticky-footer-navbar.css">
     <link rel="stylesheet" href="/css/style.css">
     <!-- endinject -->
 
@@ -17,20 +18,13 @@
     <!-- endinject -->
   </head>
   <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <div class="navbar-brand">nuProject</div>
-            </div>
-        </div>
-    </nav>
-    <div  class="container" ui-view></div>
+    <div ng-include="'partials/_home-nav.html'"></div>
+    <div ui-view></div>
 
     <!-- bower:js -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="lib/angular-resource/angular-resource.js"></script>
     <!-- endbower -->
@@ -42,7 +36,6 @@
     <script src="/modules/controllers/venueListCtrl.js"></script>
     <script src="/modules/models/venue.js"></script>
     <script src="/modules/common/services/common.services.js"></script>
-    <script src="/modules/common/services/dataAccessService.js"></script>
     <!-- endinject -->
 
   </body>
