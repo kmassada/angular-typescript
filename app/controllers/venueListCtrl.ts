@@ -10,12 +10,12 @@ module app.VenueList {
     venues: app.domain.IVenue[];
     currentVenue: app.domain.IVenue;
 
-    static $inject=["dataAccessService"];
-    constructor(private dataAccessService: app.common.DataAccessService) {
+    static $inject=["venueService"];
+    constructor(private venueService: app.common.VenueService) {
       this.title = "Venue List"
       this.venues =[];
 
-      var venueResource= dataAccessService.getVenueResource();
+      var venueResource= venueService.getVenueResource();
       venueResource.query((data: app.domain.IVenue[])=> {
         this.venues = data;
       });

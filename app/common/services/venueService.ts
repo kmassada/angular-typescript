@@ -1,12 +1,12 @@
 module app.common {
-    interface IDataAccessService{
+    interface IVenueService{
 
     }
     interface IVenueResource extends ng.resource.IResource<app.domain.IVenue>{
 
     }
 
-    export class DataAccessService implements IDataAccessService{
+    export class VenueService implements IVenueService{
       static $inject = ["$resource", "url"];
       constructor(private $resource: ng.resource.IResourceService, private url: URL_CONSTANTS){
         alert(this.url.BASE);
@@ -18,5 +18,5 @@ module app.common {
   }
   angular
     .module("common.services")
-    .service("dataAccessService", DataAccessService);
+    .service("venueService", VenueService);
 }
