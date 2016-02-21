@@ -79,3 +79,5 @@ var options = {
   watch: Files,
 };
 ```
+
+`gulp serve` will compile all ts files, and start server, and will rerun these for any changes in /public or /app 

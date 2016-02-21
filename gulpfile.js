@@ -48,9 +48,9 @@ gulp.task('inject', function() {
       .pipe(gulp.dest('./public'));
 });
 
-gulp.task('serve', [], function() {
+gulp.task('serve', ['ts', 'inject'], function() {
   var nodemon = require('gulp-nodemon');
-  var Files = ['public/**/*.*', '!gulpfile.js'];
+  var Files = ['public/**/*.*', 'app/**/*.*', '!gulpfile.js'];
   var options = {
     exec: 'node_modules/.bin/http-server',
     delayTime: 1,
