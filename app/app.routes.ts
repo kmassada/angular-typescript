@@ -23,7 +23,7 @@ module app {
         templateUrl: "../partials/_venues.html",
         controller: "VenueListCtrl",
         controllerAs: "vm",
-        data: { isPublic: false },
+        data: { isPublic: true },
     });
   }
 }
