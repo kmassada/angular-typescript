@@ -24,3 +24,7 @@ body {
 code {
   font-size: 80%;
 }
+
+.btn{
+  border:0px solid transparent;
+ }
