@@ -18,7 +18,7 @@ touch public/js/script.js
 ### TSD
 ```
 tsd init
-tsd install angular angular-ui-router angular-resource --resolve --save
+tsd install angular angular-ui-router angular-resource angular-ui-bootstrap --resolve --save
 
 #tsd plugin
 https://atom.io/packages/atom-typescript
@@ -80,4 +80,4 @@ var options = {
 };
 ```
 
-`gulp serve` will compile all ts files, and start server, and will rerun these for any changes in /public or /app 
+`gulp serve` will compile all ts files, and start server, and will rerun these for any changes in /public or /app
