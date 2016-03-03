@@ -1,6 +1,35 @@
 <div class="container">
   <div class="page-header">
-      <h2>{{::vm.title}}</h2>
+    <h3><i class="glyphicon glyphicon-th-list"></i> {{::vm.title}}
+      | <button class="btn btn-success" style="align:left" ng-click="vm.edit({})">New</a></h2>
+  </div>
+  <p class="text-center" ng-show="vm.loading"><span class="fa fa-refresh fa-5x fa-spin"></span></p>
+  <div class="row" ng-hide="vm.loading">
+    <div class="list-group">
+      <div class="list-group-item" ng-repeat="venue in vm.venues">
+        <h5>
+          <button class="btn btn-default" style="float:right;" class="button" ng-click="vm.remove(venue)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+          <button class="btn btn-default" style="float:right;" class="button" ng-click="vm.edit(venue)">
+            <span class="glyphicon glyphicon-pencil" style="float:right;"></span>
+          </button>
+
+        </h5>
+        <div href="#/venues" style="cursor: pointer;"
+          ng-model=collapse ng-click="collapse=!collapse">
+          <h5>
+            {{ venue.name }}
+          </h5>
+          <div ng-show=collapse>
+            <p>
+              <p>{{ venue.location }}</br>
+              {{ venue.category }}</p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <p class="lead"></p>
 </div>

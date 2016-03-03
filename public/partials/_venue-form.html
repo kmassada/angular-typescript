@@ -1,0 +1,35 @@
+<form class="form" name='venueForm' ng-submit="vm.save()" novalidate>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button aria-label="Close" class="close" data-dismiss="modal" ng-click="vm.cancel()" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Venue</h4>
+        </div>
+        <div class="modal-body">
+            <div class="span">
+                <!-- Name -->
+                <div class="form-group">
+                  <input type="text" class="form-control input-sm" name="name" ng-model="vm.venue.name" placeholder="Name">
+                </div>
+                <!-- Location -->
+                <div class="form-group">
+                  <input type="text" class="form-control input-sm" name="location" ng-model="vm.venue.location" placeholder="Location">
+                </div>
+                <!-- Category -->
+                <div class="form-group">
+                  <input type="text" class="form-control input-sm" name="category" ng-model="vm.venue.category" placeholder="Category">
+                </div>
+            </div>
+            <div class="span">
+              <tt> data = {{vm.venue}}</tt><br/>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <!-- SUBMIT BUTTON -->
+            <div class="form-group text-right">
+                <button class="btn btn-success btn-primary btn-lg" type="submit" ng-click="vm.save()">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
