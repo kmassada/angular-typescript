@@ -2,8 +2,8 @@ module app.common {
     interface IVenueService{
 
     }
-    export interface IVenueResource extends ng.resource.IResource<app.domain.IVenue>{
-
+    export interface IVenueResourceClass extends ng.resource.IResourceClass<ng.resource.IResource<app.domain.IVenue>>{
+      update(IVenue: app.domain.IVenue) : app.domain.IVenue;
     }
 
     export class VenueService implements IVenueService{
@@ -11,8 +11,16 @@ module app.common {
       constructor(private $resource: ng.resource.IResourceService, private url: URL_CONSTANTS){
       }
 
-    getVenueResource(): ng.resource.IResourceClass<IVenueResource>{
-      return this.$resource(this.url.BASE_API+"/v1/venues/:id");
+    getVenueResourceClass(): IVenueResourceClass{
+      // Define custom action as IActionDescriptor
+      var updateAction : ng.resource.IActionDescriptor = {
+          method: 'PUT',
+          isArray: false
+      };
+      return <IVenueResourceClass>
+      this.$resource(this.url.BASE_API+"/v1/venues/:id", {id: '@_id'} ,{
+        update: updateAction
+      });
     }
   }
   angular
