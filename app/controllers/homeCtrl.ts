@@ -5,7 +5,7 @@ module app.home {
   class HomeCtrl implements IHomeModel {
     title: string;
     static $inject = ["url"];
-    constructor(private url: URL_CONSTANTS) {
+    constructor(private url: UrlConstants) {
       this.title = "Home Controller"
       console.log(this.url.BASE);
     }

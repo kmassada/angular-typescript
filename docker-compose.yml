@@ -1,0 +1,11 @@
+version: '2'
+services:
+  angular:
+    build: .
+    ports:
+     - "8000:8000"
+    volumes:
+     - .:/usr/src/app
+    external_links:
+     - nunodeserver_mongo_1:mongo
+     - nunodeserver_api_1:api

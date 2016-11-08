@@ -8,7 +8,7 @@ gulp.task('tsd', function(callback) {
   }, callback);
 });
 
-gulp.task('ts', function() {
+gulp.task('ts', ['tsd'], function() {
   var ts = require('gulp-typescript');
   var tsProject = ts.createProject('./tsconfig.json');
   var tsResult = tsProject.src()
@@ -17,7 +17,7 @@ gulp.task('ts', function() {
   return tsResult.js.pipe(gulp.dest('./public/modules'));
 });
 
-gulp.task('inject', function() {
+gulp.task('inject', ['ts'], function() {
   var wiredep = require('wiredep').stream;
   var inject = require('gulp-inject');
 
@@ -48,7 +48,7 @@ gulp.task('inject', function() {
       .pipe(gulp.dest('./public'));
 });
 
-gulp.task('serve', ['ts', 'inject'], function() {
+gulp.task('serve', ['inject'], function() {
   var nodemon = require('gulp-nodemon');
   var Files = ['public/**/*.*', 'app/**/*.*', '!gulpfile.js'];
   var options = {

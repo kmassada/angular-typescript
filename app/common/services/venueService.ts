@@ -8,7 +8,7 @@ module app.common {
 
     export class VenueService implements IVenueService{
       static $inject = ["$resource", "url"];
-      constructor(private $resource: ng.resource.IResourceService, private url: URL_CONSTANTS){
+      constructor(private $resource: ng.resource.IResourceService, private url: UrlConstants){
       }
 
     getVenueResourceClass(): IVenueResourceClass{
